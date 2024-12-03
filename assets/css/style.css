@@ -1,0 +1,889 @@
+/* Custom variables - keep these */
+
+:root {
+    --blueishgrey: #363d47;
+    --darkgrey: #333;
+    /* Dark grey color for text and elements */
+    --black: #000000;
+    /* Black color for text and elements */
+    --white: #ffffff;
+    /* White color for elements in white theme */
+    --blue: rgb(56, 92, 173);
+    /* Blue color for text and elements */
+    --skyblue: rgb(35, 141, 193);
+    /* Sky blue color for text and elements */
+    --lightgrey: #f0f0f0;
+    /* Light grey color for background in white theme */
+    --blue-rgb: 56, 92, 173;
+    --lightblue: #f5f8fa;
+}
+
+
+/* Custom hover effects */
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+
+/* Keep specific custom styles for elements that Bootstrap doesn't cover */
+
+.service-icon {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+
+/* Keep any custom responsive adjustments */
+
+@media (max-width: 768px) {
+    /* Custom responsive styles */
+}
+
+
+/* Remove all styles that Bootstrap already provides, such as:
+   - Basic typography
+   - Grid system
+   - Cards
+   - Buttons
+   - Spacing utilities
+   - Flex utilities
+   - Colors
+   - Shadows
+*/
+
+
+/* Theme switcher styles */
+
+[data-bs-theme="dark"] {
+    --bs-body-color: #dee2e6;
+    --bs-body-bg: #212529;
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: var(--blueishgrey) !important;
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--blue) !important;
+}
+
+.nav-link:hover {
+    color: var(--blue);
+}
+
+
+/* Theme switcher icon styles */
+
+#theme-switcher .icon-sun,
+#theme-switcher .icon-moon {
+    transition: transform 0.5s ease;
+}
+
+[data-bs-theme="dark"] #theme-switcher .icon-sun {
+    display: none;
+}
+
+[data-bs-theme="dark"] #theme-switcher .icon-moon {
+    display: inline-block !important;
+}
+
+
+/* Add these styles */
+
+.testimonial-card {
+    position: relative;
+}
+
+.testimonial-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: var(--skyblue);
+    opacity: 0.7;
+}
+
+
+/* Login page styles */
+
+.login-card {
+    max-width: 800px;
+    width: 90%;
+}
+
+[data-bs-theme="dark"] .login-card {
+    background-color: var(--blueishgrey);
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    color: #6c757d;
+    /* Bootstrap's secondary color */
+}
+
+.password-toggle:hover {
+    color: var(--blue);
+}
+
+
+/* Optional: Custom button styles if you want to override Bootstrap */
+
+.btn-primary {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--skyblue);
+    border-color: var(--skyblue);
+}
+
+
+/* Custom styles for chat widget */
+
+
+/* Chat Widget Styles */
+
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background: var(--bs-body-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+
+/* Theme-specific styles */
+
+[data-bs-theme="light"] .chat-widget {
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+[data-bs-theme="dark"] .chat-widget {
+    background: #212529;
+    border: 1px solid #444;
+}
+
+
+/* Minimized state */
+
+.chat-widget.minimized {
+    transform: translateY(calc(100% - 60px));
+    /* Only shows header */
+}
+
+
+/* Chat Header */
+
+.chat-header {
+    padding: 15px;
+    background: var(--blue);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-controls button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* Chat Body */
+
+.chat-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* Messages Container */
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Message Styles */
+
+.message {
+    max-width: 80%;
+    margin: 5px 0;
+}
+
+.message.user {
+    align-self: flex-end;
+}
+
+.message.support {
+    align-self: flex-start;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.message-content p {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.message.user .message-content {
+    background: var(--blue);
+    color: #fff;
+}
+
+.message.support .message-content {
+    background: #f0f0f0;
+    color: #333;
+}
+
+[data-bs-theme="dark"] .message.support .message-content {
+    background: #343a40;
+    color: #dee2e6;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: var(--bs-secondary-color);
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* Chat Input Area */
+
+.chat-input {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 20px;
+    outline: none;
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .chat-input input {
+    background: #343a40;
+    border-color: #444;
+}
+
+.chat-input input:focus {
+    border-color: var(--blue);
+}
+
+.send-message {
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.send-message:hover {
+    background: var(--darkblue);
+}
+
+
+/* Scrollbar Styling */
+
+[data-bs-theme="dark"] .chat-messages::-webkit-scrollbar-track {
+    background: #343a40;
+}
+
+[data-bs-theme="dark"] .chat-messages::-webkit-scrollbar-thumb {
+    background: #666;
+}
+
+[data-bs-theme="dark"] .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* How It Works Section Styles */
+
+.feature-card {
+    border: none;
+    height: 100%;
+    transition: all 0.3s ease;
+    background: var(--bs-body-bg);
+}
+
+.feature-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(var(--blue-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+
+/* Services Section Styles */
+
+.service-card {
+    height: 100%;
+    transition: transform 0.3s ease;
+    background: var(--bs-body-bg);
+}
+
+.service-icon {
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+
+
+/* Banner Section Styles */
+
+.banner-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.banner-image {
+    width: 100%;
+    height: 45rem;
+    object-fit: cover;
+}
+
+
+/* Animation Classes */
+
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+.hover-lift {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Dark Theme Adjustments */
+
+[data-bs-theme="dark"] .feature-card,
+[data-bs-theme="dark"] .service-card {
+    background: var(--bs-dark);
+    border-color: var(--bs-dark);
+}
+
+[data-bs-theme="dark"] .feature-icon-wrapper {
+    background-color: rgba(var(--blue-rgb), 0.2);
+}
+
+
+/* Enhanced Card Styles */
+
+.card {
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Enhanced Feature Icon Styles */
+
+.feature-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(var(--blue-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--blue);
+    transition: all 0.3s ease;
+}
+
+
+/* Enhanced Testimonial Styles */
+
+.testimonial-card {
+    overflow: hidden;
+}
+
+.testimonial-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-icon {
+    opacity: 0.4;
+    transform: scale(1.1);
+}
+
+
+/* Enhanced Animation Delays */
+
+[data-aos-delay="100"] {
+    transition-delay: 100ms;
+}
+
+[data-aos-delay="200"] {
+    transition-delay: 200ms;
+}
+
+[data-aos-delay="300"] {
+    transition-delay: 300ms;
+}
+
+[data-aos-delay="400"] {
+    transition-delay: 400ms;
+}
+
+[data-aos-delay="500"] {
+    transition-delay: 500ms;
+}
+
+
+/* Enhanced Responsive Adjustments */
+
+@media (max-width: 768px) {
+    .feature-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+    .banner-image {
+        height: 30rem;
+    }
+}
+
+
+/* Modern Testimonials Styling */
+
+.testimonial-card-modern {
+    background: var(--bs-body-bg);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+[data-bs-theme="dark"] .testimonial-card-modern {
+    background: #2b2b2b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2.5rem;
+    color: var(--blue);
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card-modern:hover .quote-icon {
+    transform: scale(1.2);
+    opacity: 0.3;
+}
+
+.testimonial-content {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card-modern blockquote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--bs-body-color);
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.author-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(var(--blue-rgb), 0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card-modern:hover .author-image {
+    border-color: var(--blue);
+    transform: scale(1.05);
+}
+
+.testimonial-author {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(var(--blue-rgb), 0.1);
+}
+
+.author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--bs-body-color);
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: var(--bs-secondary-color);
+    margin: 0.25rem 0 0;
+}
+
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .testimonial-card-modern {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    .quote-icon {
+        font-size: 2rem;
+    }
+    .testimonial-card-modern blockquote {
+        font-size: 1rem;
+    }
+    .author-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+/* Contact Form Specific Styles */
+
+.contact-form .input-group-text {
+    background-color: transparent;
+    border-right: none;
+}
+
+.contact-form .form-control {
+    border-left: none;
+}
+
+.contact-form .input-group:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--blue-rgb), 0.25);
+}
+
+.contact-form .input-group:focus-within .input-group-text,
+.contact-form .input-group:focus-within .form-control {
+    border-color: var(--blue);
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+}
+
+
+/* Dark theme adjustments */
+
+[data-bs-theme="dark"] .contact-form .input-group-text {
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+
+/* Flip animation styles */
+
+.flip-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.flipper {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-container.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+}
+
+
+/* Adjust card styles */
+
+.login-card {
+    margin: 0;
+    width: 100%;
+}
+
+
+/* Add to your existing flip animation styles */
+
+.back-step2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+
+/* Ensure proper z-index handling */
+
+.back,
+.back-step2 {
+    z-index: 2;
+}
+
+
+/* Enhanced Dropdown Menu Styles */
+
+.dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    border-radius: 8px;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* Dropdown items styling */
+
+.dropdown-item {
+    padding: 0.7rem 1.5rem;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(var(--blue-rgb), 0.1);
+    padding-left: 1.8rem;
+}
+
+
+/* Add hover indicator */
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--blue);
+    transition: width 0.2s ease;
+    transform: translateY(-50%);
+}
+
+.dropdown-item:hover::before {
+    width: 0.5rem;
+}
+
+
+/* Dark theme adjustments */
+
+[data-bs-theme="dark"] .dropdown-menu {
+    background-color: #2b2b2b;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+    background-color: rgba(var(--blue-rgb), 0.15);
+}
+
+
+/* Dropdown divider enhancement */
+
+.dropdown-divider {
+    margin: 0.5rem 1rem;
+    opacity: 0.1;
+}
+
+
+/* Optional: Add icons to dropdown items */
+
+.dropdown-item i,
+.dropdown-item svg {
+    margin-right: 0.5rem;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-item:hover i,
+.dropdown-item:hover svg {
+    opacity: 1;
+}
+
+
+/* Service Cards Dark Theme Adjustment */
+
+[data-bs-theme="dark"] .service-card {
+    background-color: var(--blueishgrey);
+}
+
+
+/* How It Works Section Dark Theme Adjustment */
+
+[data-bs-theme="dark"] .feature-card {
+    background-color: var(--blueishgrey);
+}
+
+
+/* Testimonials Dark Theme Adjustment */
+
+[data-bs-theme="dark"] .testimonial-card-modern {
+    background-color: var(--blueishgrey);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .testimonial-card-modern:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
