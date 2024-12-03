@@ -1,0 +1,1 @@
+ErrorDocument 404 http://localhost/Documentos/cafpath/views/public/404.php
